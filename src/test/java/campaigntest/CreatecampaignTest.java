@@ -46,7 +46,7 @@ public class CreatecampaignTest extends Baseclass {
 	createcampaignpage.getCampaignnameTF().sendKeys(CAMPAIGN_NAME);
 	createcampaignpage.getTargetsizeTF().sendKeys(TARGET_SIZE);
 	createcampaignpage.getCreatecampaignbtn().click();
-	System.out.println("hello");
+	
 	System.out.println("hi");
 	
         Homepage homepage = new Homepage(driver);
