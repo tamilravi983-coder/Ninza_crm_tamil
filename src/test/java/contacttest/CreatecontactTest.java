@@ -28,7 +28,7 @@ import objectrepository.Selectcampaignpage;
 
 public class CreatecontactTest extends Baseclass {
 	@Test(groups= {"smoke,Regression"})
-	public void createcontactwithmandatoryfieldsTest() throws IOException {
+	public void createcontactwithmandatoryfieldsTest() throws IOException, InterruptedException {
 		
 		//read test script data from excel file
 		//Excelfileutility elib = new Excelfileutility();
@@ -54,6 +54,7 @@ public class CreatecontactTest extends Baseclass {
 			
 			//create campaign
 			//driver.findElement(By.xpath("//span[text()='Create Campaign']")).click();
+		Thread.sleep(2000);
 		Campaignspage campaignspage = new Campaignspage(driver);
 		campaignspage.getAddcreatecampaignbtn().click();
 		Createcampaignpage createcampaignpage = new Createcampaignpage(driver);

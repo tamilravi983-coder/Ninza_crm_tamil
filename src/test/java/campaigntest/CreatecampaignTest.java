@@ -29,7 +29,7 @@ import objectrepository.Loginpage;
 
 public class CreatecampaignTest extends Baseclass {
 	@Test(groups="smoke")
-	public void MandatoryfieldscampaignTest() throws IOException {
+	public void MandatoryfieldscampaignTest() throws IOException, InterruptedException {
 		
 
 		String CAMPAIGN_NAME=elib.readdatafromexcelfile("campaign", 1, 2);
@@ -39,12 +39,14 @@ public class CreatecampaignTest extends Baseclass {
 	
 	
 	//create campaign
+		Thread.sleep(2000);
 	Campaignspage campaignspage = new Campaignspage(driver);
 	campaignspage.getAddcreatecampaignbtn().click();
 	Createcampaignpage createcampaignpage = new Createcampaignpage(driver);
 	createcampaignpage.getCampaignnameTF().sendKeys(CAMPAIGN_NAME);
 	createcampaignpage.getTargetsizeTF().sendKeys(TARGET_SIZE);
 	createcampaignpage.getCreatecampaignbtn().click();
+	System.out.println("hello");
 	System.out.println("hi");
 	
         Homepage homepage = new Homepage(driver);
@@ -69,7 +71,7 @@ public class CreatecampaignTest extends Baseclass {
 	
 	}
 	@Test(groups="regression")
-	public void CreatecamapaignwithstatusTest() throws IOException {
+	public void CreatecamapaignwithstatusTest() throws IOException, InterruptedException {
 		
 		String CAMPAIGN_NAME=elib.readdatafromexcelfile("campaign", 4, 2);
 		String STATUS=elib.readdatafromexcelfile("campaign", 4, 3);
@@ -78,6 +80,7 @@ public class CreatecampaignTest extends Baseclass {
 	
 				
 			//create campaign
+		Thread.sleep(2000);
 			Campaignspage campaignspage = new Campaignspage(driver);
 			campaignspage.getAddcreatecampaignbtn().click();
 
@@ -105,7 +108,7 @@ public class CreatecampaignTest extends Baseclass {
 			
 	}
 	@Test(groups="smoke")
-	public void CreatecampaignwithexpectedclosedateTest() throws EncryptedDocumentException, IOException {
+	public void CreatecampaignwithexpectedclosedateTest() throws EncryptedDocumentException, IOException, InterruptedException {
 		
 		//Javautility jlib = new Javautility();
 		String requireddate = jlib.getrequireddate(30);
@@ -121,6 +124,7 @@ public class CreatecampaignTest extends Baseclass {
 		
 		
 		//create campaign
+		Thread.sleep(2000);
 		Campaignspage campaignspage = new Campaignspage(driver);
 		campaignspage.getAddcreatecampaignbtn().click();
 		
